@@ -87,7 +87,7 @@ def astronaut_selection():
                         <title>Отбор астронавтов</title>
                     </head>
                     <body>
-                        <h1>Анкета претендента на участие в миссии</h1>
+                        <h1 class="form">Анкета претендента на участие в миссии</h1>
                         <div>
                             <form class="login_form" method="post">
                                 <input type="text" class="form-control" id="surname" placeholder="Введите фамилию" 
@@ -172,7 +172,35 @@ def astronaut_selection():
                     </body>
                 </html>
                 """
+    elif request.method == "POST":
+        return "Форма отправлена"
 
+
+@app.route("/choice/<planet_name>")
+def choice(planet_name):
+    return f"""
+            <!doctype html>
+            <html lang="ru">
+                <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <link rel="stylesheet"
+                            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+                            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+                            crossorigin="anonymous">
+                            <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
+                    <title>Варианты выбора</title>
+                </head>
+                <body>
+                    <h1>Моё предложение - {planet_name}</h1>
+                    <p class="first">Человечество вырастает из детства.</br></p>
+                    <p class="second">Человечеству мала одна планета.</br></p>
+                    <p class="third">Мы сделаем обитаемыми безжизненные пока планеты.</br></p>
+                    <p class="fourth">И начнем с планеты {planet_name}!</br></p>
+                    <p class="fifth">Присоединяйся!</br></p>
+                </body>
+            </html>
+            """
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
