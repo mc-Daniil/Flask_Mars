@@ -196,7 +196,7 @@ def choice(planet_name):
                     <p class="first">Человечество вырастает из детства.</br></p>
                     <p class="second">Человечеству мала одна планета.</br></p>
                     <p class="third">Мы сделаем обитаемыми безжизненные пока планеты.</br></p>
-                    <p class="fourth">И начнем с планеты {planet_name}!</br></p>
+                    <p class="fourth">И начнем с планеты {planet_name}</br></p>
                     <p class="fifth">Присоединяйся!</br></p>
                 </body>
             </html>
